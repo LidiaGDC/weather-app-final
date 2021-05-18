@@ -22,9 +22,6 @@ function formatDate(timestamp) {
 }
 
 function showTemperature(response) {
-  console.log(response);
-  console.log(response.data.main.temp_max);
-  console.log(response.data.main.temp);
   let temperature = document.querySelector("#temperature");
   let city = document.querySelector("#city");
   let tempMax = document.querySelector("#tempMax");
