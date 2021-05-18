@@ -3,24 +3,21 @@ h1 {
   text-shadow: 2px 1px 2px grey;
   font-size: 30px;
   margin-top: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   padding: 3px;
 }
 h2 {
   font-size: 25px;
-  margin: 5px;
-  padding: 10px;
+
   text-align: center;
 }
-h3 {
-  font-size: 16px;
-  margin: 5px;
-  padding: 30px;
-}
+
 footer {
   font-size: 15px;
 }
-
+ul {
+  margin: 0px;
+}
 li {
   list-style: none;
 }
@@ -82,6 +79,7 @@ form {
 .units {
   font-size: 35px;
   text-align: left;
+  padding-top: 25px;
 }
 
 .icon {
@@ -91,11 +89,13 @@ form {
 #max-min {
   font-size: 20px;
   text-align: center;
+  padding-top: 25px;
 }
 
 #hum-wind {
   font-size: 18px;
   text-align: center;
+  padding-top: 25px;
 }
 
 #city::first-letter,
