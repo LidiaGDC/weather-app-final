@@ -13,6 +13,8 @@
     />
     <link rel="stylesheet" href="src/style.css" />
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <title>Weather App</title>
   </head>
   <body>
@@ -31,25 +33,26 @@
       <button class="current-location">Current Location</button>
       <h1>
         <ul>
-          <li class="city">Madrid</li>
-          <li class="day-hour">Tuesday 12:00 pm</li>
+          <li id="city"></li>
+          <li id="date"></li>
+          <li id="description"></li>
         </ul>
       </h1>
       <h2>
         <div class="row">
           <div class="col-2 icon">🌧</div>
-          <div class="col-4 temperature">30°C | F</div>
+          <div class="col-4 units"><span id="temperature"> </span> °C | F</div>
 
-          <div class="col-3 max-min">
+          <div class="col-3" id="max-min">
             <div class="row">
-              <div class="col-12">30°C | F</div>
-              <div class="col-12">21°C | F</div>
+              <div class="col-12"><span id="tempMax"> </span> °C | F</div>
+              <div class="col-12"><span id="tempMin"> </span> °C | F</div>
             </div>
           </div>
-          <div class="col-3 hum-wind">
+          <div class="col-3" id="hum-wind">
             <div class="row">
-              <div class="col-12 humidity">Humidity: 20%</div>
-              <div class="col-12 wind">Wind: 2km/h</div>
+              <div class="col-12">Humidity: <span id="humidity"></span> %</div>
+              <div class="col-12">Wind: <span id="wind"></span> Km/h</div>
             </div>
           </div>
           <h3>
