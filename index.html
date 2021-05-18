@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
@@ -12,6 +11,8 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="src/style.css" />
+
     <title>Weather App</title>
   </head>
   <body>
@@ -36,8 +37,9 @@
       </h1>
       <h2>
         <div class="row">
-          <div class="col-3 temperature">30°C | F</div>
-          <div class="col-3 icon">☀</div>
+          <div class="col-2 icon">🌧</div>
+          <div class="col-4 temperature">30°C | F</div>
+
           <div class="col-3 max-min">
             <div class="row">
               <div class="col-12">30°C | F</div>
@@ -46,8 +48,8 @@
           </div>
           <div class="col-3 hum-wind">
             <div class="row">
-              <div class="col-12">Humidity: 20%</div>
-              <div class="col-12">Wind: 2km/h</div>
+              <div class="col-12 humidity">Humidity: 20%</div>
+              <div class="col-12 wind">Wind: 2km/h</div>
             </div>
           </div>
           <h3>
@@ -100,7 +102,7 @@
 
           <footer>
             <a
-              href="http://https://github.com/LidiaGDC/weather-app-final"
+              href="https://github.com/LidiaGDC/weather-app-final"
               target="_blank"
               >Open source code</a
             >
