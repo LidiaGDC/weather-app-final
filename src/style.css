@@ -53,10 +53,17 @@ form {
   background-color: #11698e;
   color: #a2f3df;
 }
+#search-text-input {
+  box-shadow: 3px 3px 2px grey;
+  border: 1px solid #5a6275;
+  border-radius: 3px;
+  height: 35px;
+}
 
 .current-location {
   display: block;
   margin: 0 auto;
+  margin-top: 5px;
   color: #11698e;
   box-shadow: 3px 3px 2px grey;
   background-color: #a2f3df;
