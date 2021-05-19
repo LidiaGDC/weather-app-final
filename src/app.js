@@ -82,35 +82,51 @@ function showCelsiusTemperature(event) {
 function showMaxFahrenheitTemp(event) {
   event.preventDefault();
   let maxTemp = document.querySelector("#tempMax");
-  maxCelsiusTemp.classList.add("active");
-  maxFahrenheitTemp.classList.remove("active");
   let maxFahrenheitTemp = (celsiusTempMax * 9) / 5 + 32;
   maxTemp.innerHTML = Math.round(maxFahrenheitTemp);
+
+  let fahrenheitSymbol = document.querySelector("#fahrenheittempmax");
+  fahrenheitSymbol.classList.add("active");
+
+  let celsiusSymbol = document.querySelector("#celsiustempmax");
+  celsiusSymbol.classList.remove("active");
 }
 
 function showMaxCelsiusTemp(event) {
   event.preventDefault();
   let maxTemp = document.querySelector("#tempMax");
-  maxCelsiusTemp.classList.remove("active");
-  maxFahrenheitTemp.classList.add("active");
   maxTemp.innerHTML = Math.round(celsiusTempMax);
+
+  let fahrenheitSymbol = document.querySelector("#fahrenheittempmax");
+  fahrenheitSymbol.classList.remove("active");
+
+  let celsiusSymbol = document.querySelector("#celsiustempmax");
+  celsiusSymbol.classList.add("active");
 }
 
 function showMinFahrenheitTemp(event) {
   event.preventDefault();
   let minTemp = document.querySelector("#tempMin");
-  minCelsiusTemp.classList.remove("active");
-  minFahrenheitTemp.classList.add("active");
   let minFahrenheitTemp = (celsiusTempMin * 9) / 5 + 32;
   minTemp.innerHTML = Math.round(minFahrenheitTemp);
+
+  let fahrenheitSymbol = document.querySelector("#fahrenheittempmin");
+  fahrenheitSymbol.classList.add("active");
+
+  let celsiusSymbol = document.querySelector("#celsiustempmin");
+  celsiusSymbol.classList.remove("active");
 }
 
 function showMinCelsiusTemp(event) {
   event.preventDefault();
   let minTemp = document.querySelector("#tempMin");
-  minCelsiusTemp.classList.add("active");
-  minFahrenheitTemp.classList.remove("active");
   minTemp.innerHTML = Math.round(celsiusTempMin);
+
+  let fahrenheitSymbol = document.querySelector("#fahrenheittempmin");
+  fahrenheitSymbol.classList.remove("active");
+
+  let celsiusSymbol = document.querySelector("#celsiustempmin");
+  celsiusSymbol.classList.add("active");
 }
 
 let celsiusTemp = null;
@@ -137,3 +153,5 @@ minFahrenheitTemp.addEventListener("click", showMinFahrenheitTemp);
 
 let minCelsiusTemp = document.querySelector("#celsiustempmin");
 minCelsiusTemp.addEventListener("click", showMinCelsiusTemp);
+
+search("Madrid");
