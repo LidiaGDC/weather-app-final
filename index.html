@@ -44,12 +44,26 @@
           <div class="col-2">
             <img id="icon" src="." alt="" />
           </div>
-          <div class="col-4 units"><span id="temperature"> </span> °C | °F</div>
+          <div class="col-4 units">
+            <span id="temperature"> </span>
+            <a href="#" class="templink active" id="celsiustemp"> °C </a> |
+            <a href="#" class="templink" id="fahrenheittemp">°F </a>
+          </div>
 
           <div class="col-3" id="max-min">
             <div class="row">
-              <div class="col-12"><span id="tempMax"> </span> °C | °F</div>
-              <div class="col-12"><span id="tempMin"> </span> °C | °F</div>
+              <div class="col-12">
+                <span id="tempMax"> </span>
+                <a href="#" class="templink active" id="celsiustempmax"> °C </a>
+                |
+                <a href="#" class="templink" id="fahrenheittempmax">°F </a>
+              </div>
+              <div class="col-12">
+                <span id="tempMin"> </span>
+                <a href="#" class="templink active" id="celsiustempmin"> °C </a>
+                |
+                <a href="#" class="templink" id="fahrenheittempmin">°F </a>
+              </div>
             </div>
           </div>
           <div class="col-3" id="hum-wind">

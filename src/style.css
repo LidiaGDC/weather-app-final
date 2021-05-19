@@ -11,9 +11,14 @@ h2 {
 
   text-align: center;
 }
+form {
+  text-align: center;
+  padding: 8px 0px 8px 0px;
+}
 
-footer {
-  font-size: 15px;
+a {
+  color: #11698e;
+  text-decoration: none;
 }
 ul {
   margin: 0px;
@@ -21,11 +26,10 @@ ul {
 li {
   list-style: none;
 }
-form {
-  text-align: center;
-  padding: 8px 0px 8px 0px;
+footer {
+  padding-top: 30px;
+  font-size: 15px;
 }
-
 .container {
   max-width: 650px;
   border: 1px solid #5a6275;
@@ -53,6 +57,7 @@ form {
   background-color: #11698e;
   color: #a2f3df;
 }
+
 #search-text-input {
   box-shadow: 3px 3px 2px grey;
   border: 1px solid #5a6275;
@@ -79,6 +84,16 @@ form {
   color: #a2f3df;
 }
 
+.templink.active {
+  color: #212529;
+  text-decoration: none;
+}
+.templink.active:hover {
+  color: #212529;
+  text-decoration: none;
+  cursor: default;
+  transition: none;
+}
 #description {
   font-size: 23px;
 }

@@ -32,6 +32,10 @@ function showTemperature(response) {
   let date = document.querySelector("#date");
   let icon = document.querySelector("#icon");
 
+  celsiusTemp = Math.round(response.data.main.temp);
+  celsiusTempMax = Math.round(response.data.main.temp_max);
+  celsiusTempMin = Math.round(response.data.main.temp_min);
+
   temperature.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
   tempMax.innerHTML = Math.round(response.data.main.temp_max);
@@ -58,6 +62,78 @@ function handleSubmit(event) {
   let cityInput = document.querySelector("#search-text-input");
   search(cityInput.value);
 }
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#temperature");
+  currentCelsiusTemp.classList.remove("active");
+  currentFahrenheitTemp.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
+  currentTemp.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#temperature");
+  currentCelsiusTemp.classList.add("active");
+  currentFahrenheitTemp.classList.remove("active");
+  currentTemp.innerHTML = Math.round(celsiusTemp);
+}
+
+function showMaxFahrenheitTemp(event) {
+  event.preventDefault();
+  let maxTemp = document.querySelector("#tempMax");
+  maxCelsiusTemp.classList.add("active");
+  maxFahrenheitTemp.classList.remove("active");
+  let maxFahrenheitTemp = (celsiusTempMax * 9) / 5 + 32;
+  maxTemp.innerHTML = Math.round(maxFahrenheitTemp);
+}
+
+function showMaxCelsiusTemp(event) {
+  event.preventDefault();
+  let maxTemp = document.querySelector("#tempMax");
+  maxCelsiusTemp.classList.remove("active");
+  maxFahrenheitTemp.classList.add("active");
+  maxTemp.innerHTML = Math.round(celsiusTempMax);
+}
+
+function showMinFahrenheitTemp(event) {
+  event.preventDefault();
+  let minTemp = document.querySelector("#tempMin");
+  minCelsiusTemp.classList.remove("active");
+  minFahrenheitTemp.classList.add("active");
+  let minFahrenheitTemp = (celsiusTempMin * 9) / 5 + 32;
+  minTemp.innerHTML = Math.round(minFahrenheitTemp);
+}
+
+function showMinCelsiusTemp(event) {
+  event.preventDefault();
+  let minTemp = document.querySelector("#tempMin");
+  minCelsiusTemp.classList.add("active");
+  minFahrenheitTemp.classList.remove("active");
+  minTemp.innerHTML = Math.round(celsiusTempMin);
+}
+
+let celsiusTemp = null;
+let celsiusTempMax = null;
+let celsiusTempMin = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let currentFahrenheitTemp = document.querySelector("#fahrenheittemp");
+currentFahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
+
+let currentCelsiusTemp = document.querySelector("#celsiustemp");
+currentCelsiusTemp.addEventListener("click", showCelsiusTemperature);
+
+let maxFahrenheitTemp = document.querySelector("#fahrenheittempmax");
+maxFahrenheitTemp.addEventListener("click", showMaxFahrenheitTemp);
+
+let maxCelsiusTemp = document.querySelector("#celsiustempmax");
+maxCelsiusTemp.addEventListener("click", showMaxCelsiusTemp);
+
+let minFahrenheitTemp = document.querySelector("#fahrenheittempmin");
+minFahrenheitTemp.addEventListener("click", showMinFahrenheitTemp);
+
+let minCelsiusTemp = document.querySelector("#celsiustempmin");
+minCelsiusTemp.addEventListener("click", showMinCelsiusTemp);
