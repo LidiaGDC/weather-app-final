@@ -62,6 +62,7 @@ function handleSubmit(event) {
   let cityInput = document.querySelector("#search-text-input");
   search(cityInput.value);
 }
+
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#temperature");
