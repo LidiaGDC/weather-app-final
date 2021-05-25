@@ -21,6 +21,40 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = [
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+  ];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2 forecast-date"> ${day}</div>
+      <img class="forecast-icon"
+       src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+       alt=""
+       width="50px"
+       />
+       <div class ="weather-forecast-temperatures">
+      <span class="forecast-temperature-max"> 20°C </span>
+      <span class="forecast-temperature-min"> 10°C </span>
+      </div>
+      </div>  
+   `;
+  });
+  forecastHTML = forecastHTML + `</div> `;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let temperature = document.querySelector("#temperature");
   let city = document.querySelector("#city");
@@ -156,3 +190,4 @@ let minCelsiusTemp = document.querySelector("#celsiustempmin");
 minCelsiusTemp.addEventListener("click", showMinCelsiusTemp);
 
 search("Madrid");
+showForecast();
