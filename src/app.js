@@ -38,15 +38,16 @@ function showForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      ` <div class="col-2 forecast-date"> ${day}</div>
+      `<div class="col-2"> 
+      <div class ="forecast-date"> ${day}</div>
       <img class="forecast-icon"
-       src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+       src="http://openweathermap.org/img/wn/11n@2x.png"
        alt=""
        width="50px"
        />
        <div class ="weather-forecast-temperatures">
-      <span class="forecast-temperature-max"> 20°C </span>
-      <span class="forecast-temperature-min"> 10°C </span>
+         <span class="forecast-temperature-max"> 20°C </span>
+         <span class="forecast-temperature-min"> 10°C </span>
       </div>
       </div>  
    `;
