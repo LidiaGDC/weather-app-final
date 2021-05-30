@@ -40,32 +40,18 @@
       </h1>
       <h2>
         <div class="row">
-          <div class="col-2">
+          <div class="col-5">
             <img id="icon" src="." alt="" />
-          </div>
-          <div class="col-4 units">
-            <span id="temperature"> </span>
-            <a href="#" class="templink active" id="celsiustemp"> °C </a> |
-            <a href="#" class="templink" id="fahrenheittemp">°F </a>
+            <span id="temperature"> </span> <span class="tempcel">°C</span>
           </div>
 
           <div class="col-3" id="max-min">
             <div class="row">
-              <div class="col-12">
-                <span id="tempMax"> </span>
-                <a href="#" class="templink active" id="celsiustempmax"> °C </a>
-                |
-                <a href="#" class="templink" id="fahrenheittempmax">°F </a>
-              </div>
-              <div class="col-12">
-                <span id="tempMin"> </span>
-                <a href="#" class="templink active" id="celsiustempmin"> °C </a>
-                |
-                <a href="#" class="templink" id="fahrenheittempmin">°F </a>
-              </div>
+              <div class="col-12">Max: <span id="tempMax"> </span>°C</div>
+              <div class="col-12">Min: <span id="tempMin"> </span>°C</div>
             </div>
           </div>
-          <div class="col-3" id="hum-wind">
+          <div class="col-4" id="hum-wind">
             <div class="row">
               <div class="col-12">Humidity: <span id="humidity"></span> %</div>
               <div class="col-12">Wind: <span id="wind"></span> Km/h</div>

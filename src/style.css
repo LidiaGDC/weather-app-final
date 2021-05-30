@@ -65,23 +65,14 @@ footer {
   height: 35px;
 }
 
-.templink.active {
-  color: #212529;
-  text-decoration: none;
-}
-.templink.active:hover {
-  color: #212529;
-  text-decoration: none;
-  cursor: default;
-  transition: none;
-}
 #description {
   font-size: 23px;
 }
 #temperature,
+.tempcel,
 .units {
   font-size: 35px;
-  text-align: left;
+  text-align: right;
   padding-top: 25px;
 }
 

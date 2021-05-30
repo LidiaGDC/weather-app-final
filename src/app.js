@@ -73,7 +73,6 @@ function showForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "aabb459045170c682b91ab6157b00f6a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
@@ -107,7 +106,7 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
-  console.log(response);
+
   getForecast(response.data.coord);
 }
 
@@ -140,79 +139,7 @@ function showCelsiusTemperature(event) {
   currentTemp.innerHTML = Math.round(celsiusTemp);
 }
 
-function showMaxFahrenheitTemp(event) {
-  event.preventDefault();
-  let maxTemp = document.querySelector("#tempMax");
-  let maxFahrenheitTemp = (celsiusTempMax * 9) / 5 + 32;
-  maxTemp.innerHTML = Math.round(maxFahrenheitTemp);
-
-  let fahrenheitSymbol = document.querySelector("#fahrenheittempmax");
-  fahrenheitSymbol.classList.add("active");
-
-  let celsiusSymbol = document.querySelector("#celsiustempmax");
-  celsiusSymbol.classList.remove("active");
-}
-
-function showMaxCelsiusTemp(event) {
-  event.preventDefault();
-  let maxTemp = document.querySelector("#tempMax");
-  maxTemp.innerHTML = Math.round(celsiusTempMax);
-
-  let fahrenheitSymbol = document.querySelector("#fahrenheittempmax");
-  fahrenheitSymbol.classList.remove("active");
-
-  let celsiusSymbol = document.querySelector("#celsiustempmax");
-  celsiusSymbol.classList.add("active");
-}
-
-function showMinFahrenheitTemp(event) {
-  event.preventDefault();
-  let minTemp = document.querySelector("#tempMin");
-  let minFahrenheitTemp = (celsiusTempMin * 9) / 5 + 32;
-  minTemp.innerHTML = Math.round(minFahrenheitTemp);
-
-  let fahrenheitSymbol = document.querySelector("#fahrenheittempmin");
-  fahrenheitSymbol.classList.add("active");
-
-  let celsiusSymbol = document.querySelector("#celsiustempmin");
-  celsiusSymbol.classList.remove("active");
-}
-
-function showMinCelsiusTemp(event) {
-  event.preventDefault();
-  let minTemp = document.querySelector("#tempMin");
-  minTemp.innerHTML = Math.round(celsiusTempMin);
-
-  let fahrenheitSymbol = document.querySelector("#fahrenheittempmin");
-  fahrenheitSymbol.classList.remove("active");
-
-  let celsiusSymbol = document.querySelector("#celsiustempmin");
-  celsiusSymbol.classList.add("active");
-}
-
-let celsiusTemp = null;
-let celsiusTempMax = null;
-let celsiusTempMin = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let currentFahrenheitTemp = document.querySelector("#fahrenheittemp");
-currentFahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
-
-let currentCelsiusTemp = document.querySelector("#celsiustemp");
-currentCelsiusTemp.addEventListener("click", showCelsiusTemperature);
-
-let maxFahrenheitTemp = document.querySelector("#fahrenheittempmax");
-maxFahrenheitTemp.addEventListener("click", showMaxFahrenheitTemp);
-
-let maxCelsiusTemp = document.querySelector("#celsiustempmax");
-maxCelsiusTemp.addEventListener("click", showMaxCelsiusTemp);
-
-let minFahrenheitTemp = document.querySelector("#fahrenheittempmin");
-minFahrenheitTemp.addEventListener("click", showMinFahrenheitTemp);
-
-let minCelsiusTemp = document.querySelector("#celsiustempmin");
-minCelsiusTemp.addEventListener("click", showMinCelsiusTemp);
 
 search("Madrid");
