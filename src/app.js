@@ -21,7 +21,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = [
@@ -56,6 +57,13 @@ function showForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "aabb459045170c682b91ab6157b00f6a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
 function showTemperature(response) {
   let temperature = document.querySelector("#temperature");
   let city = document.querySelector("#city");
@@ -84,6 +92,8 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+  console.log(response);
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -191,4 +201,3 @@ let minCelsiusTemp = document.querySelector("#celsiustempmin");
 minCelsiusTemp.addEventListener("click", showMinCelsiusTemp);
 
 search("Madrid");
-showForecast();
